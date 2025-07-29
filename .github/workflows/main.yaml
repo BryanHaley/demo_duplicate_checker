@@ -1,7 +1,7 @@
-name: Build Overlay
+name: Build Application
 on: [push]
 jobs:
-  Build-Overlay-Windows:
+  Build-Application-Windows:
     runs-on: windows-latest
     strategy:
       matrix:
@@ -25,13 +25,13 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: patcher_exe
+          name: demo_checker_win
           path: |
             check_demo_hashes.exe
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: patcher_py
+          name: demo_checker_py
           path: |
             check_demo_hashes.py
             requirements.txt
